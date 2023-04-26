@@ -400,7 +400,7 @@ $position-values: (
 
 $body-bg:                   $primary !default;
 $body-color:                $white !default;
-$body-text-align:           null !default;
+$body-text-align:           center !default;
 
 // Links
 //
@@ -566,7 +566,7 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
+$h1-font-size:                $font-size-base * 5 !default;
 $h2-font-size:                $font-size-base * 2.25 !default;
 $h3-font-size:                $font-size-base * 1.75 !default;
 $h4-font-size:                $font-size-base * 1.5 !default;
@@ -716,7 +716,7 @@ $table-variants: (
 
 // scss-docs-start input-btn-variables
 $input-btn-padding-y:         .75rem !default;
-$input-btn-padding-x:         .75rem !default;
+$input-btn-padding-x:         2rem !default;
 $input-btn-font-family:       null !default;
 $input-btn-font-size:         $font-size-base !default;
 $input-btn-line-height:       $line-height-base !default;
@@ -1082,7 +1082,7 @@ $nav-pills-link-active-bg:          $component-active-bg !default;
 // Navbar
 
 // scss-docs-start navbar-variables
-$navbar-padding-y:                  $spacer * .5 !default;
+$navbar-padding-y:                  $spacer * 1 !default;
 $navbar-padding-x:                  null !default;
 
 $navbar-nav-link-padding-x:         .5rem !default;
@@ -1232,12 +1232,12 @@ $placeholder-opacity-min:           .2 !default;
 // Cards
 
 // scss-docs-start card-variables
-$card-spacer-y:                     $spacer !default;
-$card-spacer-x:                     $spacer !default;
+$card-spacer-y:                     $spacer * 2.25 !default;
+$card-spacer-x:                     $spacer * 2 !default;
 $card-title-spacer-y:               $spacer * .5 !default;
 $card-border-width:                 $border-width !default;
 $card-border-color:                 var(--#{$prefix}border-color-translucent) !default;
-$card-border-radius:                $border-radius !default;
+$card-border-radius:                $border-radius-2xl !default;
 $card-box-shadow:                   null !default;
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
 $card-cap-padding-y:                $card-spacer-y * .5 !default;
