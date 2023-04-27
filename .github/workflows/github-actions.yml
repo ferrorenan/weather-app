@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
 
-      - run: echo "💡 Starting process to merge Develop into Main on the ${{ github.repository }}."
+      - run: echo "✅ Starting process to merge Develop into Main on the ${{ github.repository }}."
       - name: Merge develop -> main
         run: |
           git fetch --unshallow
