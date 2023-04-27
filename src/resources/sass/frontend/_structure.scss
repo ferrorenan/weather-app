@@ -1,0 +1,16 @@
+$block-spacer: 2rem;
+
+.block-spacer {
+
+  &-y {
+
+    padding-top: $block-spacer;
+    padding-bottom: $block-spacer;
+
+    @include media-breakpoint-up(lg) {
+
+      padding-top: $block-spacer * 2;
+      padding-bottom: $block-spacer * 2;
+    }
+  }
+}

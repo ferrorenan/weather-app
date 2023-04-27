@@ -28,25 +28,25 @@ $should-use-local-font-face: false;
   font-display: if($font-display, $font-display, swap);
 }
 
-$light-font-map: (
-  font-family: 'Poppins',
-  font-weight: 300,
-);
-
 $regular-font-map: (
-  font-family: 'Poppins',
-  font-weight: 400,
+  font-family: 'Montserrat',
+  font-weight: 500,
 );
 
 $bold-font-map: (
-  font-family: 'Poppins',
+  font-family: 'Montserrat',
   font-weight: 700,
 );
 
+$extrabold-font-map: (
+  font-family: 'Montserrat Alternates',
+  font-weight: 900,
+);
+
 $project-fonts: (
-    'light': $light-font-map,
     'regular': $regular-font-map,
     'bold': $bold-font-map,
+    'extrabold': $extrabold-font-map,
 );
 
 @if ($should-use-local-font-face) {
