@@ -3,18 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import {BoardComponent} from "../../components/board/board.component";
-import {CardWeatherComponent} from "../../components/card-weather/card-weather.component";
+import {ImageComponent} from "../../components/image/image.component";
 
 
 @NgModule({
   declarations: [
     HomeComponent
   ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    CardWeatherComponent
-  ]
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        ImageComponent
+    ]
 })
 export class HomeModule { }
