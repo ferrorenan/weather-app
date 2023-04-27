@@ -1,20 +1,20 @@
-name: Merge develop branch to master
+name: Merge Develop branch to Main
 on:
   push:
     branches:
       - 'develop'
 jobs:
-  merge-develop-to-master:
+  merge-develop-to-main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
 
-      - name: Merge develop -> master
+      - name: Merge develop -> main
         run: |
           git fetch --unshallow
-          git checkout master
+          git checkout main
           git pull
-          git merge --no-ff master -m "Github Actions - Auto-merge Develop to Master"
+          git merge --no-ff main -m "Github Actions - Auto-merge Develop to Main"
           git push
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🍏 This job's status is ${{ job.status }}."
