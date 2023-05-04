@@ -374,11 +374,12 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  0q: $spacer * .25,
+  1: $spacer * 1,
+  2: $spacer * 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 5,
 ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -398,8 +399,8 @@ $position-values: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $light !default;
-$body-color:                $primary !default;
+$body-bg:                   $secondary !default;
+$body-color:                $white !default;
 $body-text-align:           null !default;
 
 // Links
@@ -567,8 +568,8 @@ $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
 $h1-font-size:                $font-size-base * 5 !default;
-$h2-font-size:                $font-size-base * 2.25 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
+$h2-font-size:                $font-size-base * 1.25 !default;
+$h3-font-size:                $font-size-base * 1.125 !default;
 $h4-font-size:                $font-size-base * 1.5 !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
@@ -586,7 +587,7 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer * 1 !default;
+$headings-margin-bottom:      0 !default;
 $headings-font-family:        get-font-family($extrabold-font-map) !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        700 !default;
@@ -1232,15 +1233,15 @@ $placeholder-opacity-min:           .2 !default;
 // Cards
 
 // scss-docs-start card-variables
-$card-spacer-y:                     $spacer * 2.25 !default;
+$card-spacer-y:                     $spacer * 1.5 !default;
 $card-spacer-x:                     $spacer * 2 !default;
 $card-title-spacer-y:               $spacer * .5 !default;
-$card-border-width:                 $border-width !default;
-$card-border-color:                 var(--#{$prefix}border-color-translucent) !default;
+$card-border-width:                 0 !default;
+$card-border-color:                 none !default;
 $card-border-radius:                $border-radius-2xl !default;
 $card-box-shadow:                   null !default;
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
-$card-cap-padding-y:                $card-spacer-y * .5 !default;
+$card-cap-padding-y:                $card-spacer-y * .75 !default;
 $card-cap-padding-x:                $card-spacer-x !default;
 $card-cap-bg:                       rgba($black, .03) !default;
 $card-cap-color:                    null !default;
