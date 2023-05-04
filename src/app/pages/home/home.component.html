@@ -6,12 +6,7 @@
           <div class="container">
             <div class="row align-items-lg-center justify-content-center">
               <div class="col-lg-auto">
-                <app-image imageClass="mb-2 mb-lg-4 d-none d-lg-block img-fluid"
-                           [pathImage]="'assets/svg/logo.svg'"
-                           [width]="242"
-                           [height]="140">
-                </app-image>
-                <h1 class="lh-0 fw-bolder">
+                <h1 class="mb-1 lh-0 fw-bolder">
                   Weather
                   <br>
                   news.
@@ -19,16 +14,32 @@
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry!
                 </p>
-                <button class="btn btn-success text-white w-100"
+                <button class="btn text-white w-100 btn-info"
                         title="Get Weather News"
                         type="button"
-                        (click)="getLocalizaionClientLatAndAlt()">
-                  Get Weather News
+                        (click)="getClientWeatherData()"
+                        [ngClass]="disableGetWeatherNewsButton ? 'd-flex align-items-center justify-content-center disabled' : ''">
+                  <ng-container *ngIf="disableGetWeatherNewsButton; else enabledButtonTemplate">
+                    Getting Lat and Long data
+                    <div class="ms-3 spinner-border text-white" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </ng-container>
+                  <ng-template #enabledButtonTemplate>
+                    Get Weather News
+                  </ng-template>
                 </button>
               </div>
             </div>
           </div>
         </section>
+      </div>
+      <div class="px-2 py-3 p-lg-0 align-self-center mx-lg-auto col-lg-5">
+        <ng-container *ngIf="(weatherData$ | async) as weatherData">
+          <app-card-localization [city]="weatherData.name"
+                                 [country]="weatherData.sys.country"></app-card-localization>
+          <app-card-weather-data [weaherPayload]="weatherData"></app-card-weather-data>
+        </ng-container>
       </div>
     </div>
   </div>
