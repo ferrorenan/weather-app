@@ -1,0 +1,25 @@
+<div class="mb-2 card">
+  <div class="card-header">
+    <h2 class="d-block">
+      You are in
+    </h2>
+  </div>
+  <div class="card-body">
+    <div class="d-lg-flex justify-content-lg-around">
+      <div class="mb-1 mb-lg-0">
+        <app-image pathImage="assets/svg/ic-world.svg"
+                   [width]="40"
+                   [height]="40"></app-image>
+        <span class="mx-0q d-inline-block">Country:</span>
+        <strong>{{ country }}</strong>
+      </div>
+      <div>
+        <app-image pathImage="assets/svg/ic-pin.svg"
+                   [width]="40"
+                   [height]="40"></app-image>
+        <span class="mx-0q d-inline-block">City:</span>
+        <strong>   {{ city }}</strong>
+      </div>
+    </div>
+  </div>
+</div>
