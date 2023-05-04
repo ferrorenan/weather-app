@@ -43,10 +43,16 @@ $extrabold-font-map: (
   font-weight: 900,
 );
 
+$tertiary-font-map: (
+  font-family: 'Bruno Ace SC',
+  font-weight: 900,
+);
+
 $project-fonts: (
-    'regular': $regular-font-map,
-    'bold': $bold-font-map,
-    'extrabold': $extrabold-font-map,
+  'regular': $regular-font-map,
+  'bold': $bold-font-map,
+  'extrabold': $extrabold-font-map,
+  'tertiary': $tertiary-font-map,
 );
 
 @if ($should-use-local-font-face) {
