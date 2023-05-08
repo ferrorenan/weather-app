@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: `Welcome - Let's see yout weather informations!`
+    title: `Welcome - Let's see your weather informations!`
   }
 ];
 
