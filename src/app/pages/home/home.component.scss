@@ -6,13 +6,15 @@
 
   &-manager {
 
-    background: url("/assets/images/shape-decorator.jpg");
+    background: url("/assets/images/shape-decorator.png");
     background-size: cover;
     border-radius: 0 0 50px 50px;
     padding: 2rem 1.25rem 3rem 1.25rem;
 
     @include media-breakpoint-up(lg) {
 
+      background: url("/assets/images/shape-decorator-lg.jpg");
+      background-size: cover;
       padding: 2rem;
       height: 100vh;
       display: flex;

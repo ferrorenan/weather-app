@@ -12,16 +12,16 @@
                   news.
                 </h1>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry!
+                  Get general information of your local weather with just one click!
                 </p>
-                <button class="btn text-white w-100 btn-info"
+                <button class="btn text-white w-100 btn-secondary"
                         title="Get Weather News"
                         type="button"
                         (click)="getClientWeatherData()"
-                        [ngClass]="disableGetWeatherNewsButton ? 'd-flex align-items-center justify-content-center disabled' : ''">
+                        [ngClass]="disableGetWeatherNewsButton ? 'text-start d-flex align-items-center justify-content-center disabled' : ''">
                   <ng-container *ngIf="disableGetWeatherNewsButton; else enabledButtonTemplate">
                     Getting Lat and Long data
-                    <div class="ms-3 spinner-border text-white" role="status">
+                    <div class="ms-3 spinner-grow text-white" role="status">
                       <span class="visually-hidden">Loading...</span>
                     </div>
                   </ng-container>
@@ -35,11 +35,18 @@
         </section>
       </div>
       <div class="px-2 py-3 p-lg-0 align-self-center mx-lg-auto col-lg-5">
-        <ng-container *ngIf="(weatherData$ | async) as weatherData">
+        <ng-container *ngIf="(weatherData$ | async) as weatherData; else enableLocalizationTemplate">
           <app-card-localization [city]="weatherData.name"
                                  [country]="weatherData.sys.country"></app-card-localization>
           <app-card-weather-data [weaherPayload]="weatherData"></app-card-weather-data>
         </ng-container>
+        <ng-template #enableLocalizationTemplate>
+          <app-picture imageClass="mb-2 d-block mx-auto img-fluid"
+                       [picturePropertie]="imageBanner"></app-picture>
+          <p class="text-center">
+            Please, in order to get your local weather data we need you to enable location!
+          </p>
+        </ng-template>
       </div>
     </div>
   </div>
