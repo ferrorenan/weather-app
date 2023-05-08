@@ -1,0 +1,9 @@
+.spinner {
+
+  &-grow {
+    @include media-breakpoint-up(lg) {
+
+      height: 1.5rem;
+    }
+  }
+}
