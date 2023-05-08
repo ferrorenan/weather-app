@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {ImageComponent} from "../image/image.component";
+import {IconComponent} from "../icon/icon.component";
+import {CardComponent} from "../card/card.component";
 
 @Component({
   selector: 'app-card-localization',
@@ -7,7 +8,8 @@ import {ImageComponent} from "../image/image.component";
   styleUrls: ['./card-localization.component.scss'],
   standalone: true,
   imports: [
-    ImageComponent
+    IconComponent,
+    CardComponent
   ]
 })
 export class CardLocalizationComponent {

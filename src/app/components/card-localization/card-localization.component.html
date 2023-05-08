@@ -1,25 +1,19 @@
-<div class="mb-2 card">
-  <div class="card-header">
-    <h2 class="d-block">
-      You are in
-    </h2>
-  </div>
-  <div class="card-body">
-    <div class="d-lg-flex justify-content-lg-around">
-      <div class="mb-1 mb-lg-0">
-        <app-image pathImage="assets/svg/ic-world.svg"
-                   [width]="40"
-                   [height]="40"></app-image>
-        <span class="mx-0q d-inline-block">Country:</span>
-        <strong>{{ country }}</strong>
-      </div>
-      <div>
-        <app-image pathImage="assets/svg/ic-pin.svg"
-                   [width]="40"
-                   [height]="40"></app-image>
-        <span class="mx-0q d-inline-block">City:</span>
-        <strong>   {{ city }}</strong>
-      </div>
+<app-card cardClass="mb-2"
+          cardTitle="You are in">
+  <div class="d-lg-flex justify-content-lg-around">
+    <div class="mb-1 mb-lg-0">
+      <app-icon pathImage="assets/svg/ic-world.svg"
+                [width]="35"
+                [height]="35"></app-icon>
+      <span class="mx-0q d-inline-block">Country:</span>
+      <strong>{{ country }}</strong>
+    </div>
+    <div>
+      <app-icon pathImage="assets/svg/ic-pin.svg"
+                [width]="35"
+                [height]="35"></app-icon>
+      <span class="mx-0q d-inline-block">City:</span>
+      <strong>   {{ city }}</strong>
     </div>
   </div>
-</div>
+</app-card>

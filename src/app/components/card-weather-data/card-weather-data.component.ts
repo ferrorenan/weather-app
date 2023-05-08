@@ -1,7 +1,9 @@
 import {Component, Input} from '@angular/core';
 import {WeatherResponsePayload} from "../../models/weather-response-payload";
-import {ImageComponent} from "../image/image.component";
 import {TitleCasePipe} from "@angular/common";
+import {IconComponent} from "../icon/icon.component";
+import {CardComponent} from "../card/card.component";
+import {CardWeatherSubtitleComponent} from "../card-weather-subtitle/card-weather-subtitle.component";
 
 @Component({
   selector: 'app-card-weather-data',
@@ -9,8 +11,10 @@ import {TitleCasePipe} from "@angular/common";
   styleUrls: ['./card-weather-data.component.scss'],
   standalone: true,
   imports: [
-    ImageComponent,
-    TitleCasePipe
+    TitleCasePipe,
+    IconComponent,
+    CardComponent,
+    CardWeatherSubtitleComponent
   ]
 })
 export class CardWeatherDataComponent {

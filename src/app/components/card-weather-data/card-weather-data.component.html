@@ -1,61 +1,48 @@
-<div class="card">
-  <div class="card-header">
-    <h2 class="d-block">
-      Weather status
-    </h2>
-  </div>
-  <div class="card-body">
-    <div class="row justify-content-around">
-      <div class="order-2 order-lg-1 col-lg-7">
-        <span class="mb-0q d-block">
-          Current weather:
-          <strong>
-            {{ weaherPayload.weather[0].description | titlecase }}
-          </strong>
-        </span>
-        <span class="mb-0q d-block">
-          Humidity:
-          <strong>
-            {{ weaherPayload.main.humidity }}%
-          </strong>
-        </span>
-        <span class="mb-0q d-block">
-          Minimum temperature:
-          <strong>
-            {{ this.getCelciusTemperatureConverted(weaherPayload.main.temp_min) }}°C
-          </strong>
-        </span>
-        <span class="mb-0q d-block">
-          Maximum temperature:
-          <strong>
-            {{ this.getCelciusTemperatureConverted(weaherPayload.main.temp_max) }}°C
-          </strong>
-        </span>
-        <span class="mb-0q d-block">
-          Wind speed:
-          <strong>
-            {{ weaherPayload.wind.speed }}
-          </strong>
-        </span>
-        <span class="mb-0q d-block">
-          Cloudiness:
-          <strong>
-            {{ weaherPayload.clouds.all }}%
-          </strong>
-        </span>
-      </div>
-      <div class="order-1 order-lg-2 col-lg-5">
-        <div class="d-flex align-items-center">
-          <app-image imageClass="d-inline-block img-fluid"
-                     [pathImage]="weaherPayload.weather[0].icon ? 'assets/images/'+weaherPayload.weather[0].icon+'.png' : 'assets/images/unknown.png'"
-                     [width]="75"
-                     [height]="75">
-          </app-image>
-          <span class="tertiary-font card-temperature-number">
+<app-card cardTitle="Weather status">
+  <div class="row justify-content-around">
+    <div class="order-2 order-lg-1 col-lg-7">
+      <app-card-weather-subtitle title="Current weather:">
+        <strong>
+          {{ weaherPayload.weather[0].description | titlecase }}
+        </strong>
+      </app-card-weather-subtitle>
+      <app-card-weather-subtitle title="Humidity:">
+        <strong>
+          {{ weaherPayload.main.humidity }}%
+        </strong>
+      </app-card-weather-subtitle>
+      <app-card-weather-subtitle title="Minimum temperature:">
+        <strong>
+          {{ this.getCelciusTemperatureConverted(weaherPayload.main.temp_min) }}°C
+        </strong>
+      </app-card-weather-subtitle>
+      <app-card-weather-subtitle title="Maximum temperature:">
+        <strong>
+          {{ this.getCelciusTemperatureConverted(weaherPayload.main.temp_max) }}°C
+        </strong>
+      </app-card-weather-subtitle>
+      <app-card-weather-subtitle title="Wind speed:">
+        <strong>
+          {{ weaherPayload.wind.speed }}km
+        </strong>
+      </app-card-weather-subtitle>
+      <app-card-weather-subtitle title="Cloudiness:">
+        <strong>
+          {{ weaherPayload.clouds.all }}%
+        </strong>
+      </app-card-weather-subtitle>
+    </div>
+    <div class="order-1 order-lg-2 col-lg-5">
+      <div class="mb-2 mb-lg-0 hstack justify-content-center card-decorator">
+        <app-icon imageClass="d-inline-block img-fluid"
+                  [pathImage]="weaherPayload.weather[0].icon ? 'assets/images/'+weaherPayload.weather[0].icon+'.png' : 'assets/images/unknown.png'"
+                  [width]="75"
+                  [height]="75">
+        </app-icon>
+        <span class="tertiary-font card-temperature-number text-secondary">
             {{ this.getCelciusTemperatureConverted(weaherPayload.main.temp) }}°C
         </span>
-        </div>
       </div>
     </div>
   </div>
-</div>
+</app-card>
