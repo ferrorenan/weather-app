@@ -1,0 +1,15 @@
+<picture>
+  <ng-container *ngFor="let imageSource of picturePropertie.sources">
+    <source [media]="imageSource.minWidth"
+            [type]=" imageSource.typeImg "
+            [srcset]=" imageSource.srcSets[0] ">
+  </ng-container>
+  <img src="data:image/png;base64, R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+       class="img-fluid {{ imageClass }}"
+       alt="{{ picturePropertie.alt }}"
+       title="{{ picturePropertie.title }}"
+       loading="lazy"
+       decoding="async"
+       [attr.width]="picturePropertie.width"
+       [attr.height]="picturePropertie.height">
+</picture>
