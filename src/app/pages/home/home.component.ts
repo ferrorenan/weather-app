@@ -4,6 +4,8 @@ import {WeatherService} from "../../services/weather.service";
 import {Observable} from "rxjs";
 import {WeatherResponsePayload} from "../../models/weather-response-payload";
 import {Picture} from "../../models/picture";
+import {Meta} from "@angular/platform-browser";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-home',
@@ -44,12 +46,21 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private locationService: LocalizationService,
-    private _weatherApiService: WeatherService
+    private _weatherApiService: WeatherService,
+    private _metaTagManager: Meta
   ) {}
 
   ngOnInit(): void {
 
     this.getClientLatAndAlt();
+  }
+
+  updateMetaTagDescription(): void {
+
+    this._metaTagManager.updateTag({
+      name: 'description',
+      content: environment.applicationDescription,
+    });
   }
 
   getClientLatAndAlt(): void {

@@ -38,11 +38,11 @@
         <ng-container *ngIf="(weatherData$ | async) as weatherData; else enableLocalizationTemplate">
           <app-card-localization [city]="weatherData.name"
                                  [country]="weatherData.sys.country"></app-card-localization>
-          <app-card-weather-data [weaherPayload]="weatherData"></app-card-weather-data>
+          <app-card-weather-data [weaherPayload]="weatherData" />
         </ng-container>
         <ng-template #enableLocalizationTemplate>
           <app-picture imageClass="mb-2 d-block mx-auto img-fluid"
-                       [picturePropertie]="imageBanner"></app-picture>
+                       [picturePropertie]="imageBanner" />
           <p class="text-center">
             Please, in order to get your local weather data we need you to enable location!
           </p>
