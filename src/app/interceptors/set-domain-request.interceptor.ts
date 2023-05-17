@@ -20,8 +20,6 @@ export class SetDomainRequestInterceptor implements HttpInterceptor {
         url: `${environment.url_api}${request.url}`,
       });
 
-    console.log(requestUrlUpdated)
-
     return next.handle(requestUrlUpdated);
   }
 }

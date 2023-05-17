@@ -22,8 +22,6 @@ export class CardWeatherDataComponent {
   @Input() weaherPayload: WeatherResponsePayload;
   getCelciusTemperatureConverted(temperature: number): number {
 
-    console.log((temperature - 32) / 1.8);
-
     return Math.round(temperature - 275.15);
   }
 }

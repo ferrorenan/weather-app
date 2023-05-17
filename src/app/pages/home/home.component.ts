@@ -67,14 +67,10 @@ export class HomeComponent implements OnInit {
 
     this.locationService.getPosition()
       .then(pos => {
-
         this.clientLatitude = pos.lat;
         this.clientLongitute = pos.lng;
-
-        console.log(`Positon: ${pos.lng} ${pos.lat}`);
       })
       .finally(() => {
-        console.log('Was finalized');
         this.disableGetWeatherNewsButton = false;
       });
   }
