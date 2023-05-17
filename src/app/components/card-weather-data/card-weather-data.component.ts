@@ -19,7 +19,8 @@ import {CardWeatherSubtitleComponent} from "../card-weather-subtitle/card-weathe
 })
 export class CardWeatherDataComponent {
 
-  @Input() weaherPayload: WeatherResponsePayload;
+  @Input({ required: true }) weaherPayload: WeatherResponsePayload;
+
   getCelciusTemperatureConverted(temperature: number): number {
 
     return Math.round(temperature - 275.15);
