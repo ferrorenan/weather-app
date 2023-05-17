@@ -13,6 +13,6 @@ import {NgForOf} from "@angular/common";
 })
 export class PictureComponent {
 
-  @Input() picturePropertie: Picture;
+  @Input({ required: true }) picturePropertie: Picture;
   @Input() imageClass: string;
 }

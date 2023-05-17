@@ -8,7 +8,7 @@ import {Component, Input} from '@angular/core';
 })
 export class IconComponent {
 
-  @Input() pathImage: string;
+  @Input({ required: true }) pathImage: string;
   @Input() imageClass: string;
   @Input() width: number = 1;
   @Input() height: number = 1;
