@@ -14,6 +14,6 @@ import {CardComponent} from "../card/card.component";
 })
 export class CardLocalizationComponent {
 
-  @Input() city: string;
-  @Input() country: string;
+  @Input({ required: true }) city: string;
+  @Input({ required: true }) country: string;
 }
