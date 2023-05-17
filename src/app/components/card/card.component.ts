@@ -5,13 +5,13 @@ import {IconComponent} from "../icon/icon.component";
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
+  standalone: true,
   imports: [
     IconComponent
   ],
-  standalone: true
 })
 export class CardComponent {
 
-  @Input() cardTitle: string;
+  @Input({ required: true }) cardTitle: string;
   @Input() cardClass: string;
 }
