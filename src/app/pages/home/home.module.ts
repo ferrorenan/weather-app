@@ -7,21 +7,23 @@ import {CardWeatherDataComponent} from "../../components/card-weather-data/card-
 import {CardLocalizationComponent} from "../../components/card-localization/card-localization.component";
 import {WeatherService} from "../../services/weather.service";
 import {PictureComponent} from "../../components/picture/picture.component";
+import {LocalizationService} from "../../services/localization.service";
 
 
 @NgModule({
   declarations: [
     HomeComponent
   ],
-    imports: [
-        CommonModule,
-        HomeRoutingModule,
-        CardWeatherDataComponent,
-        CardLocalizationComponent,
-        PictureComponent
-    ],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    CardWeatherDataComponent,
+    CardLocalizationComponent,
+    PictureComponent
+  ],
   providers: [
-    WeatherService
+    WeatherService,
+    LocalizationService
   ]
 })
 export class HomeModule {

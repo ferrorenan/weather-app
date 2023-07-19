@@ -6,6 +6,7 @@ import {WeatherResponsePayload} from "../../models/weather-response-payload";
 import {Picture} from "../../models/picture";
 import {Meta} from "@angular/platform-browser";
 import {environment} from "../../../environments/environment";
+import {inject} from "@angular/core";
 
 @Component({
   selector: 'app-home',
@@ -44,9 +45,10 @@ export class HomeComponent implements OnInit {
     ],
   };
 
+  private readonly locationService: LocalizationService = inject(LocalizationService);
+  private readonly weatherApiService: WeatherService = inject(WeatherService);
+
   constructor(
-    private locationService: LocalizationService,
-    private _weatherApiService: WeatherService,
     private _metaTagManager: Meta
   ) {}
 
@@ -77,7 +79,7 @@ export class HomeComponent implements OnInit {
 
   getClientWeatherData(): void {
 
-    this.weatherData$ = this._weatherApiService
+    this.weatherData$ = this.weatherApiService
       .getWeatherData(this.clientLatitude, this.clientLongitute);
   }
 }
