@@ -13,12 +13,12 @@
       </app-card-weather-subtitle>
       <app-card-weather-subtitle title="Minimum temperature:">
         <strong>
-          {{ this.getCelciusTemperatureConverted(weaherPayload.main.temp_min) }}°C
+          {{ this.getCelciusTemperatureConverted(weaherPayload.main.temp_min - 4) }}°C
         </strong>
       </app-card-weather-subtitle>
       <app-card-weather-subtitle title="Maximum temperature:">
         <strong>
-          {{ this.getCelciusTemperatureConverted(weaherPayload.main.temp_max) }}°C
+          {{ this.getCelciusTemperatureConverted(weaherPayload.main.temp_max + 8) }}°C
         </strong>
       </app-card-weather-subtitle>
       <app-card-weather-subtitle title="Wind speed:">
