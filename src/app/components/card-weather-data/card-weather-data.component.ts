@@ -23,6 +23,6 @@ export class CardWeatherDataComponent {
 
   getCelciusTemperatureConverted(temperature: number): number {
 
-    return Math.round(temperature - 275.15);
+    return Math.round(temperature - 274.5);
   }
 }
